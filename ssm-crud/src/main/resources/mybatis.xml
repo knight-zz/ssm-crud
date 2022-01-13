@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 开启驼峰命名自动映射，即从数据库列名 a_column 映射到经典 Java 属性名 aColumn。 -->
+        <!-- 使用MBG逆向工程时使用 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+    </settings>
+
+    <typeAliases>
+        <!-- 给Java Bean起别名，默认是类名首字母小写；若有注解，则别名为注解值 -->
+        <package name="com.hh.ssm.bean"/>
+    </typeAliases>
+
+    <plugins>
+        <!-- 配置拦截器插件，实现分页 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+
+</configuration>
